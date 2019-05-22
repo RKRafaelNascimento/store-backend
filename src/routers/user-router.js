@@ -1,7 +1,11 @@
+const { userService } = require('../services/index')
+
 async function routes (fastify, options) {
   fastify.get('/user', async (request, reply) => {
     try {
-      reply.status(200).send('hello world')
+      let response = await userService.find()
+
+      reply.status(200).send(response)
     } catch (err) {
       reply.status(400)
     }
