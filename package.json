@@ -37,6 +37,7 @@
   "dependencies": {
     "fastify": "^2.4.1",
     "fastify-cors": "^2.1.3",
+    "fastify-jwt": "^0.10.0",
     "knex": "^0.16.5",
     "mysql": "^2.17.1"
   }

@@ -1,5 +1,4 @@
 const { userRepository, addressRepository } = require('../repositories/index')
-const { addressService } = require('../services/index')
 const { Address, User } = require('../models/index')
 const dbClient = require('../infrastructure/mysql/client')
 

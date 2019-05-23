@@ -3,6 +3,18 @@ const routes = require('../src/routers/index')
 
 fastify.register(require('fastify-cors'))
 
+fastify.register(require('fastify-jwt'), {
+  secret: 'QX2PXgnE9jhhc6GtGhzjuuznHt67L9DL'
+})
+
+fastify.decorate('authenticate', async function (request, reply) {
+  try {
+    await request.jwtVerify()
+  } catch (err) {
+    reply.send(err)
+  }
+})
+
 for (const i in routes) {
   fastify.register(routes[i])
 }
