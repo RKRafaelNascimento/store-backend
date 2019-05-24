@@ -1,0 +1,25 @@
+version: '3'
+services:
+  db:
+    image: mysql:5.7
+    restart: always
+    environment:
+      MYSQL_DATABASE: store
+      MYSQL_USER: root
+      MYSQL_ROOT_PASSWORD: 12345
+      MYSQL_PASSWORD: 12345
+    ports:
+      - 3306:3306
+    volumes:
+      - ../store-db:/data/db
+    expose:
+      - 3306
+  nodejs:
+    build: .
+    restart: unless-stopped
+    ports:
+      - 3000:3000
+    links:
+      - db:db
+    depends_on:
+      - db
