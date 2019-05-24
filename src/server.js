@@ -15,6 +15,22 @@ fastify.decorate('authenticate', async function (request, reply) {
   }
 })
 
+fastify.register(require('fastify-swagger'), {
+  exposeRoute: true,
+  routePrefix: '/swagger',
+  swagger: {
+    info: {
+      title: 'Store',
+      version: '0.1.0'
+    },
+    host: 'localhost:8081',
+    schemes: ['http'],
+    consumes: ['application/json'],
+    produces: ['application/json'],
+    tags: [{ name: 'Store-Api', description: 'Store-Api documentation.' }]
+  }
+})
+
 for (const i in routes) {
   fastify.register(routes[i])
 }

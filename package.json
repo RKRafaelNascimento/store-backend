@@ -9,7 +9,8 @@
   },
   "scripts": {
     "nodemon": "nodemon src/server.js",
-    "start": "node src/server.js"
+    "start": "node src/server.js",
+    "prepare": "node docs/prepare-swagger-ui.js"
   },
   "contributors": [
     "Rafael Nascimento <rkrafael.nascimento@gmail.com>"
@@ -38,7 +39,11 @@
     "fastify": "^2.4.1",
     "fastify-cors": "^2.1.3",
     "fastify-jwt": "^0.10.0",
+    "fastify-swagger": "^2.4.0",
+    "fs": "0.0.1-security",
+    "fs-extra": "^8.0.1",
     "knex": "^0.16.5",
-    "mysql": "^2.17.1"
+    "mysql": "^2.17.1",
+    "swagger-ui-dist": "^3.22.2"
   }
 }
