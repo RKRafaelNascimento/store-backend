@@ -43,4 +43,4 @@ ou no diretorio raiz execute:
 
 - Dentro do diretorio scripts execute:
 
-`populate-db.sh`
+`sh populate-db.sh`
