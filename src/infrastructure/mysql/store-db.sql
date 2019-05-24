@@ -64,7 +64,7 @@ CREATE TABLE IF NOT EXISTS `store`.`products` (
   `sku` VARCHAR(45) NULL DEFAULT NULL,
   `price` DECIMAL(10,0) NULL DEFAULT '0',
   `quantity` INT(11) NULL DEFAULT '0',
-  `image` VARCHAR(150) NULL DEFAULT NULL,
+  `image` LONGTEXT NULL DEFAULT NULL,
   `createdAt` DATETIME NULL DEFAULT NULL,
   `updatedAt` DATETIME NULL DEFAULT NULL,
   `isActived` TINYINT(1) NULL DEFAULT NULL,
@@ -124,3 +124,341 @@ DEFAULT CHARACTER SET = latin1;
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
+
+
+
+INSERT INTO `store`.`address`
+(`addressId`,
+`street`,
+`number`,
+`complement`,
+`state`,
+`city`,
+`createdAt`,
+`updatedAt`,
+`isActived`)
+VALUES
+(1,
+'Av Paulista',
+2300,
+ '10',
+'sp',
+'sao paulo',
+'2019-03-24-09:00',
+'2019-03-24-09:00',
+ 1 );
+
+
+INSERT INTO `store`.`users`
+(`userId`,
+`firstName`,
+`lastName`,
+`password`,
+`email`,
+`addressId`,
+`createdAt`,
+`updatedAt`,
+`isActived`)
+VALUES
+(1,
+'Rafael',
+'Nascimento',
+'123',
+'teste@gmail.com',
+1,
+'2019-03-24-09:00',
+'2019-03-24-09:00',
+1);
+
+
+INSERT INTO `store`.`category`
+(`categoryId`,
+`name`,
+`description`,
+`image`,
+`createdAt`,
+`updatedAt`,
+`isActived`)
+VALUES
+(1,
+'Informática',
+'Informática',
+'',
+'2019-03-24-09:00',
+'2019-03-24-09:00',
+1);
+
+
+INSERT INTO `store`.`category`
+(`categoryId`,
+`name`,
+`description`,
+`image`,
+`createdAt`,
+`updatedAt`,
+`isActived`)
+VALUES
+(2,
+'Eletrodomésticos',
+'Eletrodomésticos',
+'',
+'2019-03-24-09:00',
+'2019-03-24-09:00',
+1);
+
+INSERT INTO `store`.`category`
+(`categoryId`,
+`name`,
+`description`,
+`image`,
+`createdAt`,
+`updatedAt`,
+`isActived`)
+VALUES
+(3,
+'Móveis',
+'Móveis',
+'',
+'2019-03-24-09:00',
+'2019-03-24-09:00',
+1);
+
+
+INSERT INTO `store`.`products`
+(`productId`,
+`name`,
+`description`,
+`sku`,
+`price`,
+`quantity`,
+`image`,
+`createdAt`,
+`updatedAt`,
+`isActived`)
+VALUES
+(1,
+'Smart TV LED 32” Philco ',
+'Smart TV LED 32” Philc',
+'1321123123',
+'1',
+'1',
+'https://a-static.mlcdn.com.br/618x463/smart-tv-led-32-philco-ptv32g50sn-conversor-digital-wi-fi-hdmi-usb/magazineluiza/193420100/4b3ee581ab9c965d2fd3373e02783653.jpg',
+'2019-03-24-09:00',
+'2019-03-24-09:00',
+1);
+
+INSERT INTO `store`.`products`
+(`productId`,
+`name`,
+`description`,
+`sku`,
+`price`,
+`quantity`,
+`image`,
+`createdAt`,
+`updatedAt`,
+`isActived`)
+VALUES
+(2,
+'Smartphone LG K9 16GB Dual Chip 5.0',
+'Smartphone LG K9 16GB Dual Chip 5.0',
+'1321123123',
+'100',
+'1',
+'https://a-static.mlcdn.com.br/618x463/smartphone-lg-k9-16gb-dual-chip-5-0-camera-8mp-selfie-5mp-android-tv-digital-android-7-0-preto/mega-mamute/69727/53d4eff41dab86804fec1916375d88a3.jpg',
+'2019-03-24-09:00',
+'2019-03-24-09:00',
+1);
+
+INSERT INTO `store`.`products`
+(`productId`,
+`name`,
+`description`,
+`sku`,
+`price`,
+`quantity`,
+`image`,
+`createdAt`,
+`updatedAt`,
+`isActived`)
+VALUES
+(3,
+'Painel para TV até 42 Polegadas',
+'Painel para TV até 42 Polegadas',
+'1321123123',
+'100',
+'1',
+'https://a-static.mlcdn.com.br/618x463/painel-para-tv-ate-42-polegadas-life-siena-moveis-griggio/madeiramadeira-openapi/201976/e2ff029a68737d8b05cbff40e1cef6b4.jpg',
+'2019-03-24-09:00',
+'2019-03-24-09:00',
+1);
+
+INSERT INTO `store`.`products`
+(`productId`,
+`name`,
+`description`,
+`sku`,
+`price`,
+`quantity`,
+`image`,
+`createdAt`,
+`updatedAt`,
+`isActived`)
+VALUES
+(4,
+'Fritadeira Elétrica Sem Óleo/Air Fryer Britânia - Air',
+'Fritadeira Elétrica Sem Óleo/Air Fryer Britânia - Air',
+'1321123123',
+'200',
+'1',
+'https://a-static.mlcdn.com.br/618x463/fritadeira-eletrica-sem-oleo-air-fryer-britania-air-fry-bfr02pi-preta-e-cinza-32l-com-timer/magazineluiza/218979800/33240b5c3618f0b952be8f14884cb2d7.jpg',
+'2019-03-24-09:00',
+'2019-03-24-09:00',
+1);
+
+INSERT INTO `store`.`products`
+(`productId`,
+`name`,
+`description`,
+`sku`,
+`price`,
+`quantity`,
+`image`,
+`createdAt`,
+`updatedAt`,
+`isActived`)
+VALUES
+(5,
+'Jogo de Toalha 4 Peças',
+'Jogo de Toalha 4 Peças',
+'1321123123',
+'200',
+'1',
+'https://a-static.mlcdn.com.br/618x463/jogo-de-toalha-4-pecas-santista-royal-knut-100-algodao/magazineluiza/213990700/4ae5c37dd011e752e679179ae8cff00c.jpg',
+'2019-03-24-09:00',
+'2019-03-24-09:00',
+1);
+
+
+
+INSERT INTO `store`.`products`
+(`productId`,
+`name`,
+`description`,
+`sku`,
+`price`,
+`quantity`,
+`image`,
+`createdAt`,
+`updatedAt`,
+`isActived`)
+VALUES
+(6,
+'Notebook Samsung Essentials E30 Intel Core i3 4GB',
+'Notebook Samsung Essentials E30 Intel Core i3 4GB',
+'1321123123',
+'500',
+'1',
+'https://a-static.mlcdn.com.br/618x463/notebook-samsung-essentials-e30-intel-core-i3-4gb-1tb-156-full-hd-windows-10/magazineluiza/221225800/ea80e7edbd2ac183af3aa6a68118806d.jpg',
+'2019-03-24-09:00',
+'2019-03-24-09:00',
+1);
+
+INSERT INTO `store`.`products`
+(`productId`,
+`name`,
+`description`,
+`sku`,
+`price`,
+`quantity`,
+`image`,
+`createdAt`,
+`updatedAt`,
+`isActived`)
+VALUES
+(7,
+'Impressora Multifuncional Samsung SL-M2070W - Laser Wi-Fi',
+'Impressora Multifuncional Samsung SL-M2070W - Laser Wi-Fi',
+'1321123123',
+'500',
+'1',
+'https://a-static.mlcdn.com.br/618x463/impressora-multifuncional-samsung-sl-m2070w-laser-wi-fi-preto-e-branco-usb-nfc/magazineluiza/218556000/e210fef9f11ae224cb1e718384c91252.jpg',
+'2019-03-24-09:00',
+'2019-03-24-09:00',
+1);
+
+INSERT INTO `store`.`products`
+(`productId`,
+`name`,
+`description`,
+`sku`,
+`price`,
+`quantity`,
+`image`,
+`createdAt`,
+`updatedAt`,
+`isActived`)
+VALUES
+(8,
+'Fogão 4 Bocas Consul CFO4NAR Inox - Acendimento Automático',
+'Fogão 4 Bocas Consul CFO4NAR Inox - Acendimento Automático',
+'1321123123',
+'500',
+'1',
+'https://a-static.mlcdn.com.br/618x463/fogao-4-bocas-consul-cfo4nar-inox-acendimento-automatico/magazineluiza/214469000/f294b36f2e2c709bb367172e823b5933.jpg',
+'2019-03-24-09:00',
+'2019-03-24-09:00',
+1);
+
+INSERT INTO `store`.`products`
+(`productId`,
+`name`,
+`description`,
+`sku`,
+`price`,
+`quantity`,
+`image`,
+`createdAt`,
+`updatedAt`,
+`isActived`)
+VALUES
+(9,
+'Impressora Multifuncional HP - DeskJet Ink Advantage 3776 ',
+'Impressora Multifuncional HP - DeskJet Ink Advantage 3776 ',
+'1321123123',
+'500',
+'1',
+'https://a-static.mlcdn.com.br/618x463/impressora-multifuncional-hp-deskjet-ink-advantage-3776-jato-de-tinta-wi-fi/magazineluiza/216989600/0cad0800c5d8bad659b807ffa1ae1aac.jpg',
+'2019-03-24-09:00',
+'2019-03-24-09:00',
+1);
+
+INSERT INTO `store`.`products`
+(`productId`,
+`name`,
+`description`,
+`sku`,
+`price`,
+`quantity`,
+`image`,
+`createdAt`,
+`updatedAt`,
+`isActived`)
+VALUES
+(10,
+'Furadeira e Parafusadeira Elétrica Bosch 12V ',
+'Furadeira e Parafusadeira Elétrica Bosch 12V',
+'1321123123',
+'500',
+'1',
+'https://a-static.mlcdn.com.br/618x463/furadeira-e-parafusadeira-eletrica-bosch-12v-velocidade-variavel-mandril-1-4-gsr-1000-smart/magazineluiza/218845000/897c3ba2c01d489074862c6860210fbd.jpg',
+'2019-03-24-09:00',
+'2019-03-24-09:00',
+1);
+
+
+
+
+
+
+

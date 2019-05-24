@@ -12,17 +12,17 @@ async function create (query) {
       let address = new Address()
       address['street'] = query.address.street
       address['number'] = query.address.number
-      address['complement'] = query.address.complement
-      address['state'] = query.address.state
+      address['complement'] = query.address.complement || '0'
+      address['state'] = query.address.state || 'sp'
       address['city'] = query.address.city
 
       let addressId = await addressRepository.create(address, trx)
 
       let user = new User()
       user['firstName'] = query.firstName
-      user['lastName'] = query.firstName
-      user['password'] = query.firstName
-      user['email'] = query.firstName
+      user['lastName'] = query.lastName
+      user['password'] = query.password
+      user['email'] = query.email
       user['addressId'] = addressId
 
       let response = await userRepository.create(user, trx)
