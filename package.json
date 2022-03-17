@@ -44,6 +44,6 @@
     "fs-extra": "^8.0.1",
     "knex": "^0.16.5",
     "mysql": "^2.17.1",
-    "swagger-ui-dist": "^3.22.2"
+    "swagger-ui-dist": "^4.1.3"
   }
 }
